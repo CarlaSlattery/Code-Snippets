@@ -1,0 +1,50 @@
+:root {
+  --cursor-color: black;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: inline-block; /*makes it so the width of the container is set by width of text inside */
+  font-family: "Courier New", Courier, monospace;
+  font-size: 24px;
+}
+
+.typed {
+  border-right: 2px solid var(--cursor-color);
+  overflow: hidden; /* ensures text isn't visible past the edge of the element */
+  white-space: nowrap; /* keeps the text on one line */
+  width: 0; /* hides text at start of animation. */
+
+  animation: typing, blinking;
+  animation-duration: 1.25s, 1s;
+  animation-timing-function: steps(20, end);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+
+@keyframes typing {
+  /*this changes the width of element from 0 to 100% width of parent */
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: var(--cursor-color);
+  }
+  100% {
+    border-right-color: transparent;
+  }
+} ;
